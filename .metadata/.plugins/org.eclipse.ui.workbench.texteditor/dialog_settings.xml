@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item key="wrap" value="true"/>
+		<item key="casesensitive" value="false"/>
+		<item key="wholeword" value="false"/>
+		<item key="incremental" value="false"/>
+		<item key="isRegEx" value="false"/>
+		<list key="findhistory">
+			<item value="@Configuration&#x0A;@EnableWebSecurity&#x0A;public class SecurityConfig extends WebSecurityConfigurerAdapter {&#x0A;&#x0A;&#x09;@Autowired&#x0A;&#x09;private Environment env;&#x0A;&#x0A;&#x09;@Override&#x0A;&#x09;protected void configure(HttpSecurity http) throws Exception {&#x0A;&#x09;&#x09;if (Arrays.asList(env.getActiveProfiles()).contains(&quot;test&quot;)) {&#x0A;&#x09;&#x09;&#x09;http.headers().frameOptions().disable();&#x0A;&#x09;&#x09;}&#x0A;&#x09;&#x09;&#x0A;&#x09;&#x09;http.cors().and().csrf().disable();&#x0A;&#x09;&#x09;http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);&#x0A;&#x09;&#x09;http.authorizeRequests().anyRequest().permitAll();&#x0A;&#x09;}&#x0A;&#x0A;&#x09;@Bean&#x0A;&#x09;CorsConfigurationSource corsConfigurationSource() {&#x0A;&#x09;&#x09;CorsConfiguration configuration = new CorsConfiguration().applyPermitDefaultValues();&#x0A;&#x09;&#x09;configuration.setAllowedMethods(Arrays.asList(&quot;POST&quot;, &quot;GET&quot;, &quot;PUT&quot;, &quot;DELETE&quot;, &quot;OPTIONS&quot;));&#x0A;&#x09;&#x09;final UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();&#x0A;&#x09;&#x09;source.registerCorsConfiguration(&quot;/**&quot;, configuration);&#x0A;&#x09;&#x09;return source;&#x0A;&#x09;}&#x0A;}"/>
+		</list>
+		<list key="replacehistory">
+		</list>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item key="DIALOG_X_ORIGIN" value="542"/>
+		<item key="DIALOG_Y_ORIGIN" value="141"/>
+		<item key="DIALOG_WIDTH" value="363"/>
+		<item key="DIALOG_HEIGHT" value="437"/>
+		<item key="DIALOG_FONT_NAME" value="1|Ubuntu|11.0|0|GTK|1|"/>
+	</section>
+</section>
