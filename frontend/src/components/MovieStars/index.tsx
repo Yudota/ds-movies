@@ -4,14 +4,46 @@ import { ReactComponent as StarEmpty } from "assets/img/star-empty.svg";
 
 import "./styles.css";
 
-export default function MovieStars() {
+type Props = {
+  score: number;
+};
+
+type StarProps = {
+  fill: number;
+};
+
+function getFills(score: number) {
+  const fills = [0, 0, 0, 0, 0];
+
+  const integerPart = Math.floor(score);
+
+  for (let i = 0; i < integerPart; i++) {
+    fills[i] = 1;
+  }
+
+  const diff = score - integerPart;
+  if (diff > 0) {
+    fills[integerPart] = 0.5;
+  }
+
+  return fills;
+}
+
+function Star({ fill }: StarProps) {
+  if (fill === 0) return <StarEmpty />;
+  else if (fill === 1) return <StarFull />;
+  else return <StarHalf />;
+}
+
+export default function MovieStars({ score }: Props) {
+  const fills = getFills(score);
+
   return (
     <div className="dsmovie-stars-container">
-      <StarFull />
-      <StarFull />
-      <StarFull />
-      <StarHalf />
-      <StarEmpty />
+      {fills.map((fill) => {
+        console.log("Estrelas", fill);
+        return <Star fill={fill} />;
+      })}
     </div>
   );
 }
